@@ -1,0 +1,239 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "title": "Black Coffee",
+      "price": 5,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 5,
+      "off": 0,
+      "type": "cold",
+      "img": "/images/menu-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Hot Chocolete",
+      "price": 4,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 4.4,
+      "off": 0,
+      "type": "hot",
+      "img": "/images/menu-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Ice Cream",
+      "price": 6,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 4.9,
+      "off": 0,
+      "type": "cold",
+      "img": "/images/menu-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Tea",
+      "price": 3,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 5,
+      "off": 0,
+      "type": "hot",
+      "img": "/images/menu-4.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Chocolate Milk",
+      "price": 4,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 4.8,
+      "off": 0,
+      "type": "hot",
+      "img": "/images/menu-5.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Banana Milk",
+      "price": 12,
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
+      "score": 4.9,
+      "off": 0,
+      "type": "cold",
+      "img": "/images/menu-6.jpeg"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Fastest Door Delivery",
+      "img": "/images/service-1.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faTruck"
+    },
+    {
+      "id": 2,
+      "title": "Fresh Coffee Beans",
+      "img": "/images/service-2.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faCoffee"
+    },
+    {
+      "id": 3,
+      "title": "Best Quality Coffee",
+      "img": "/images/service-3.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faAward"
+    },
+    {
+      "id": 4,
+      "title": "Online Table Booking",
+      "img": "/images/service-4.jpg",
+      "desc": "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor",
+      "icon": "faTable"
+    }
+  ],
+  "newsLetter": [
+    {
+      "id": 1,
+      "email": "mosmosadegh@gmail.com"
+    },
+    {
+      "id": 2,
+      "email": "mosadegh@gmail.com"
+    },
+    {
+      "email": "mostafa-mm@gmail",
+      "id": 3
+    },
+    {
+      "email": "nafas@yahoo",
+      "id": 4
+    }
+  ],
+  "comment": [
+    {
+      "id": 1,
+      "username": "Q_Yolme",
+      "productID": 1,
+      "body": "Wonderful coffee ❤️",
+      "profile": "/images/testimonial-1.jpg"
+    },
+    {
+      "id": 2,
+      "username": "Amin Saeedi",
+      "productID": 2,
+      "body": "Perfect coffee 🙋‍♂️❤️",
+      "profile": "/images/testimonial-2.jpg"
+    },
+    {
+      "id": 3,
+      "username": "Sasan Moqaddas",
+      "productID": 1,
+      "body": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita",
+      "profile": "/images/testimonial-3.jpg"
+    },
+    {
+      "id": 4,
+      "username": "Alireza Rezaei",
+      "productID": 2,
+      "body": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita",
+      "profile": "/images/testimonial-4.jpg"
+    },
+    {
+      "id": 5,
+      "username": "Mmd Mohammadi",
+      "productID": 1,
+      "body": "Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita",
+      "profile": "/images/testimonial-4.jpg"
+    }
+  ],
+  "reservation": [
+    {
+      "id": 1,
+      "name": "mostafa",
+      "email": "mosadegh@gmail.com",
+      "date": "",
+      "time": "",
+      "selectedPerson": 3
+    },
+    {
+      "name": "mostafa",
+      "email": "mosmosadegh123@gmail",
+      "date": "2024/2/3",
+      "time": "11:25",
+      "selectedPerson": "2",
+      "id": 2
+    },
+    {
+      "name": "mohamad",
+      "email": "sdkjfd@yahoo",
+      "date": "2024/03/01",
+      "time": "12:35",
+      "selectedPerson": "4",
+      "id": 3
+    },
+    {
+      "name": "mohamad",
+      "email": "sdkjfd@yahoo",
+      "date": "2024/03/01",
+      "time": "12:35",
+      "selectedPerson": "4",
+      "id": 4
+    },
+    {
+      "name": "mohamad",
+      "email": "amin@yahoo",
+      "date": "2024/03/01",
+      "time": "12:35",
+      "selectedPerson": "4",
+      "id": 5
+    },
+    {
+      "name": "nafas",
+      "email": "nafas@yahoo",
+      "date": "2024/05/08",
+      "time": "11:25",
+      "selectedPerson": "2",
+      "id": 6
+    },
+    {
+      "name": "nafas2",
+      "email": "nafas2@yahoo",
+      "date": "2024/05/08",
+      "time": "11:25",
+      "selectedPerson": "2",
+      "id": 7
+    },
+    {
+      "name": "nafas 3",
+      "email": "nafas3@yahoo",
+      "date": "2024/06/29",
+      "time": "11:35",
+      "selectedPerson": "1",
+      "id": 8
+    },
+    {
+      "name": "farhad",
+      "email": "farhad@gmail",
+      "date": "2024/05/02",
+      "time": "14:25",
+      "selectedPerson": "3",
+      "id": 9
+    }
+  ],
+  "messages": [
+    {
+      "name": "Mostafa",
+      "email": "mosmosadegh@gmail.com",
+      "subject": "rtrtr",
+      "body": "etetwgeg",
+      "id": 1
+    },
+    {
+      "name": "fgfgfg",
+      "email": "fetet",
+      "subject": "ryhfh",
+      "body": "success ",
+      "id": 2
+    }
+  ]
+}
