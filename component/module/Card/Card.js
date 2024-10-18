@@ -9,7 +9,7 @@ function Card({ img, title, desc, price, id }) {
         <h5 className="menu-price">${price}</h5>
       </div>
       <div className="col-8 col-sm-9">
-        <Link href={`/poduct/${id}`} >
+        <Link href={`/products/${id}`} >
         <h4>{title}</h4>
         </Link>
         <p className="m-0">{desc}</p>

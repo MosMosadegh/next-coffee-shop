@@ -6,7 +6,7 @@
       "price": 5,
       "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
       "score": 5,
-      "off": 0,
+      "off": 30,
       "type": "cold",
       "img": "/images/menu-1.jpg"
     },
@@ -26,7 +26,7 @@
       "price": 6,
       "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
       "score": 4.9,
-      "off": 0,
+      "off": 20,
       "type": "cold",
       "img": "/images/menu-3.jpg"
     },
@@ -45,7 +45,7 @@
       "title": "Chocolate Milk",
       "price": 4,
       "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
-      "score": 4.8,
+      "score": 2,
       "off": 0,
       "type": "hot",
       "img": "/images/menu-5.jpeg"
@@ -55,7 +55,7 @@
       "title": "Banana Milk",
       "price": 12,
       "desc": "Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor",
-      "score": 4.9,
+      "score": 3,
       "off": 0,
       "type": "cold",
       "img": "/images/menu-6.jpeg"
