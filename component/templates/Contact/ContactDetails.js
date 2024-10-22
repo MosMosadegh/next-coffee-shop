@@ -8,18 +8,18 @@ function ContactDetails() {
 
   const addMessage = async (event) => {
     event.preventDefault();
-    // const message = {
-    //   name,
-    //   email,
-    //   subject,
-    //   body,
-    // };
-    const res = await fetch("http://localhost:4000/messages", {
+    const message = {
+      name,
+      email,
+      subject,
+      body,
+    };
+    const res = await fetch("/api/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, subject, body }),
+      body: JSON.stringify(message),
     });
 
     if (res.status === 201) {
@@ -27,7 +27,7 @@ function ContactDetails() {
       setEmail("");
       setSubject("");
       setBody("");
-      alert("Join Successfully :))");
+      alert("Message get Successfully :))");
     }
   };
 

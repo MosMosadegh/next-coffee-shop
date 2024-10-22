@@ -12,7 +12,11 @@ function Testimonials({ comment }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:4000/comment");
+  try {
+  const res = await fetch("http://localhost:3000/api/comment");
+  if (!res.ok) {
+    throw new Error('Failed to fetch comment data');
+  }
   const data = await res.json();
 
   return {
@@ -21,6 +25,14 @@ export async function getStaticProps() {
     },
     revalidate: 60 * 60 * 12, //second
   };
+} catch (error) {
+  return {
+    props: {
+      comment: [],
+    },
+    revalidate: 60*60*12 //second
+  };
+}
 }
 
 export default Testimonials;

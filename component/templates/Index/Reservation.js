@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment-jalaali";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -8,24 +9,33 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Reservation() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [selectedPerson, setSelectedPerson] = useState("");
+  const [email, setEmail] = useState("example@gmail.com");
+  const [phoneNumber, setPhoneNumber] = useState("09*********");
+  const [date, setDate] = useState(moment().format("jYYYY/jM/jD"));
+  const [time, setTime] = useState("00:00");
+  const [selectedPerson, setSelectedPerson] = useState("1");
 
   const addReservation = async (event) => {
     event.preventDefault();
-    const reserveResponse = await fetch("http://localhost:4000/reservation", {
+    const reserveResponse = await fetch("/api/reservation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, date, time, selectedPerson }),
+      body: JSON.stringify({
+        name,
+        email,
+        phoneNumber,
+        date,
+        time,
+        selectedPerson,
+      }),
     });
 
     if (reserveResponse.status === 201) {
       setName("");
       setEmail("");
+      setPhoneNumber("");
       setDate("");
       setTime("");
       setSelectedPerson("");
@@ -105,8 +115,27 @@ function Reservation() {
                     />
                   </div>
                   <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control bg-transparent border-primary p-4"
+                      placeholder="Phone Number"
+                      required="required"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
                     <div className="date" id="date" data-target-input="nearest">
                       <input
+                        type="text"
+                        className="form-control bg-transparent border-primary p-4 datetimepicker-input"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        placeholder="تاریخ شمسی را وارد کنید"
+                      />
+                      {/* <p>تاریخ شمسی: {date}</p> */}
+
+                      {/* <input
                         type="text"
                         className="form-control bg-transparent border-primary p-4 datetimepicker-input"
                         placeholder="Date"
@@ -114,7 +143,7 @@ function Reservation() {
                         data-toggle="datetimepicker"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="form-group">

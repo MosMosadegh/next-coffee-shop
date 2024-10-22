@@ -23,25 +23,47 @@ function Index({data}) {
 }
 
 export async function getStaticProps() {
- const serviceResponse = await fetch('http://localhost:4000/services')
+
+  try {
+ const serviceResponse = await fetch('http://localhost:3000/api/service')
+ if (!serviceResponse.ok) {
+  throw new Error('Failed to fetch service data');
+}
 const servicesData = await serviceResponse.json()
 
- const menuResponse = await fetch('http://localhost:4000/menu')
+ const menuResponse = await fetch("http://localhost:3000/api/menu")
+ if (!menuResponse.ok) {
+  throw new Error('Failed to fetch menu data');
+}
 const menusData = await menuResponse.json()
 
- const testimonialResponse = await fetch('http://localhost:4000/comment')
+ const testimonialResponse = await fetch('http://localhost:3000/api/comment')
+ if (!testimonialResponse.ok) {
+  throw new Error('Failed to fetch testimonial data');
+}
 const testimonialData = await testimonialResponse.json()
-
+return {
+  props: {
+    data: {
+      services: servicesData,
+      menu: menusData,
+      testimonial: testimonialData
+    },
+  },
+  revalidate: 60*60*12 //second
+};
+} catch (error) {
   return {
     props: {
       data: {
-        services: servicesData,
-        menu: menusData,
-        testimonial: testimonialData
+        services: [],
+        menu: [],
+        testimonial: []
       },
     },
     revalidate: 60*60*12 //second
   };
-}
+}}
+
 
 export default Index;

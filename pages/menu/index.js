@@ -12,7 +12,7 @@ function Menu({menus}) {
 }
 
 export async function getStaticProps() {
-  const menuResponse = await fetch("http://localhost:4000/menu");
+  const menuResponse = await fetch("http://localhost:3000/api/menu");
   const menuData = await menuResponse.json();
 
   return {

@@ -22,7 +22,7 @@ function Pricing({ data }) {
                 .filter((item) => item.type === "hot")
 
                 .map((item) => (
-                  <Card {...item} key={item.id} />
+                  <Card {...item} key={item._id} />
                 ))}
             </div>
 
@@ -32,7 +32,7 @@ function Pricing({ data }) {
                 .filter((item) => item.type === "cold")
 
                 .map((item) => (
-                  <Card {...item} key={item.id} />
+                  <Card {...item} key={item._id} />
                 ))}
             </div>
           </div>
