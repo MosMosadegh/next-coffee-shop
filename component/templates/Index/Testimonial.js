@@ -16,7 +16,7 @@ function Testimonial({ testimonialData }) {
         </div>
         <div className="owl-carousel testimonial-carousel">
           {testimonialData.slice(0, 4).map((item) => (
-            <TestimonialItem {...item} key={item.id} />
+            <TestimonialItem {...item} key={item._id} />
           ))}
         </div>
       </div>

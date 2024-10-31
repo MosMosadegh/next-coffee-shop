@@ -13,7 +13,7 @@ function Testimonials({ comment }) {
 
 export async function getStaticProps() {
   try {
-  const res = await fetch("http://localhost:3000/api/comment");
+  const res = await fetch('http://localhost:3000/api/comment');
   if (!res.ok) {
     throw new Error('Failed to fetch comment data');
   }

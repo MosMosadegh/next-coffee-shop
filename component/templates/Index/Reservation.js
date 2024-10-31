@@ -17,22 +17,25 @@ function Reservation() {
 
   const addReservation = async (event) => {
     event.preventDefault();
-    const reserveResponse = await fetch("/api/reservation", {
+    const reservationData = {
+      name,
+      email,
+      phoneNumber,
+      date,
+      time,
+      selectedPerson,
+    };
+    console.log("reservationData Res=>",reservationData)
+    const res = await fetch("/api/reservation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name,
-        email,
-        phoneNumber,
-        date,
-        time,
-        selectedPerson,
-      }),
+      body: JSON.stringify(reservationData),
     });
+    console.log("addReservation Res=>",res)
 
-    if (reserveResponse.status === 201) {
+    if (res.status === 201) {
       setName("");
       setEmail("");
       setPhoneNumber("");
@@ -126,16 +129,16 @@ function Reservation() {
                   </div>
                   <div className="form-group">
                     <div className="date" id="date" data-target-input="nearest">
-                      <input
+                      {/* <input
                         type="text"
                         className="form-control bg-transparent border-primary p-4 datetimepicker-input"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
                         placeholder="تاریخ شمسی را وارد کنید"
-                      />
+                      /> */}
                       {/* <p>تاریخ شمسی: {date}</p> */}
 
-                      {/* <input
+                      <input
                         type="text"
                         className="form-control bg-transparent border-primary p-4 datetimepicker-input"
                         placeholder="Date"
@@ -143,7 +146,7 @@ function Reservation() {
                         data-toggle="datetimepicker"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                      /> */}
+                      />
                     </div>
                   </div>
                   <div className="form-group">

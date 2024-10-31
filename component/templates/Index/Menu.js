@@ -21,7 +21,7 @@ function Menu({ menuData }) {
               .filter((item) => item.type === "hot")
               .slice(0, 3)
               .map((item) => (
-                <Card {...item} key={item.id}/>
+                <Card {...item} key={item._id}/>
               ))}
           </div>
 
@@ -31,7 +31,7 @@ function Menu({ menuData }) {
               .filter((item) => item.type === "cold")
               .slice(0, 3)
               .map((item) => (
-                <Card {...item} key={item.id}/>
+                <Card {...item} key={item._id}/>
               ))}
 
             </div>

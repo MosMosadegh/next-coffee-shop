@@ -3,10 +3,6 @@ import ProductsDetails from "@/component/templates/Product/ProductDetails";
 import React from "react";
 
 function Product({ product, comments }) {
-  if (!product) {
-    return <div>Loading...</div>; // پیام بارگذاری
-  }
-
   return (
     <>
       <ProductsDetails data={product} />
@@ -16,11 +12,11 @@ function Product({ product, comments }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('http://localhost:3000/api/menu/');
+  const res = await fetch("http://localhost:3000/api/menu");
   const products = await res.json();
 
   const paths = products.map((product) => ({
-    params: { id: String(product._id) },
+    params: { id: product._id },
   }));
 
   return {
@@ -31,30 +27,30 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  console.log( "productRes => ",params)
-  const productRes = await fetch(`http://localhost:3000/api/menu/${toString(params.id)}`);
-  // console.log( "productRes => ",await productRes.json());
-  
+  console.log("productResp => ", params);
+  const productRes = await fetch(
+    `http://localhost:3000/api/product/${params.id}`
+  );
+
   const productData = await productRes.json();
   console.log("Product Data =>> ", productData);
-  
 
   if (!productData || productRes.status !== 200) {
     return {
-      notFound: true,
+      // notFound: true,
     };
   }
 
-  const commentRes = await fetch('http://localhost:3000/api/comment');
+  const commentRes = await fetch("http://localhost:3000/api/comment");
   if (commentRes.status !== 200) {
     return {
-      notFound: true,
+      // notFound: true,
     };
   }
   const commentsData = await commentRes.json();
 
   const productComments = commentsData.filter(
-    (comment) => toString(comment.productID) === toString(params.id)
+    (comment) => comment.productID.toString() === params.id
   );
 
   return {

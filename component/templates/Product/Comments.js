@@ -58,7 +58,7 @@ const Comments = ({ data }) => {
           >
             {data && data.length > 0 ? (
               data.slice(0,6).map((comment) => (
-                <SwiperSlide key={comment.id} className={styles.swiper_slide}>
+                <SwiperSlide key={comment._id} className={styles.swiper_slide}>
                   <div className="testimonial-item">
                     <div className="d-flex align-items-center mb-3">
                       <img

@@ -16,7 +16,7 @@ function Comments({ data }) {
       </div>
       <div className="owl-carousel testimonial-carousel">
         {data.map((item) => (
-          <TestimonialItem {...item} key={item.id} />
+          <TestimonialItem {...item} key={item._id} />
         ))}
       </div>
     </div>

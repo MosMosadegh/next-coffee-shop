@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const reservationSchema = mongoose.Schema({
+const reservationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -15,7 +15,7 @@ const reservationSchema = mongoose.Schema({
     match: /.+\@.+\..+/, // اعتبارسنجی فرمت ایمیل
   },
   phoneNumber: {
-    type: Number,
+    type: String, // تغییر به String برای حفظ صفرهای ابتدایی
     required: true,
     minlength: 11,
   },
@@ -28,7 +28,7 @@ const reservationSchema = mongoose.Schema({
     required: true,
   },
   time: {
-    type: Date,
+    type: String, // تغییر به String برای ذخیره زمان به صورت HH:mm
     required: true,
   },
   registrationDate: {

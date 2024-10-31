@@ -7,8 +7,10 @@ import Offer from "@/component/templates/Index/Offer";
 import Menu from "@/component/templates/Index/Menu";
 import Reservation from "@/component/templates/Index/Reservation";
 import Testimonial from "@/component/templates/Index/Testimonial";
+import connectToDb from "@/utils/db";
 
 function Index({data}) {
+  console.log("Received data:", data); // اضافه کردن لاگ برای عیب‌یابی
   return (
     <>
       <Slider />
@@ -23,15 +25,17 @@ function Index({data}) {
 }
 
 export async function getStaticProps() {
-
+  await connectToDb();
   try {
  const serviceResponse = await fetch('http://localhost:3000/api/service')
+ 
  if (!serviceResponse.ok) {
   throw new Error('Failed to fetch service data');
 }
 const servicesData = await serviceResponse.json()
 
- const menuResponse = await fetch("http://localhost:3000/api/menu")
+
+ const menuResponse = await fetch('http://localhost:3000/api/menu')
  if (!menuResponse.ok) {
   throw new Error('Failed to fetch menu data');
 }
@@ -42,6 +46,7 @@ const menusData = await menuResponse.json()
   throw new Error('Failed to fetch testimonial data');
 }
 const testimonialData = await testimonialResponse.json()
+console.log("servicesData=",servicesData)
 return {
   props: {
     data: {

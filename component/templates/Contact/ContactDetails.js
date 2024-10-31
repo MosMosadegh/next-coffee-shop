@@ -21,6 +21,7 @@ function ContactDetails() {
       },
       body: JSON.stringify(message),
     });
+    console.log("addMessage Res=>",res)
 
     if (res.status === 201) {
       setName("");
