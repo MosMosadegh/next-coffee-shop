@@ -27,11 +27,7 @@ const reservationSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  time: {
-    type: String, // تغییر به String برای ذخیره زمان به صورت HH:mm
-    required: true,
-  },
-  registrationDate: {
+   registrationDate: {
     type: Date,
     default: Date.now, // تاریخ ثبت‌نام به صورت خودکار
   },

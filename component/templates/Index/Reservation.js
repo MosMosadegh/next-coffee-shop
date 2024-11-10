@@ -1,19 +1,26 @@
 import React, { useState } from "react";
-import moment from "moment-jalaali";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import DatePicker from "react-multi-date-picker";
+import TimePicker from "react-multi-date-picker/plugins/time_picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 
 function Reservation() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("example@gmail.com");
   const [phoneNumber, setPhoneNumber] = useState("09*********");
-  const [date, setDate] = useState(moment().format("jYYYY/jM/jD"));
-  const [time, setTime] = useState("00:00");
+  const [date, setDate] = useState(new Date());
   const [selectedPerson, setSelectedPerson] = useState("1");
+
+  const handleChange = async (event) => {
+    const date = new Date(event)
+    setDate(date)
+  }
 
   const addReservation = async (event) => {
     event.preventDefault();
@@ -22,10 +29,9 @@ function Reservation() {
       email,
       phoneNumber,
       date,
-      time,
       selectedPerson,
     };
-    console.log("reservationData Res=>",reservationData)
+
     const res = await fetch("/api/reservation", {
       method: "POST",
       headers: {
@@ -33,14 +39,13 @@ function Reservation() {
       },
       body: JSON.stringify(reservationData),
     });
-    console.log("addReservation Res=>",res)
+    console.log("addReservation Res=>", res);
 
     if (res.status === 201) {
       setName("");
       setEmail("");
       setPhoneNumber("");
       setDate("");
-      setTime("");
       setSelectedPerson("");
       alert("Join Successfully :))");
     }
@@ -129,15 +134,6 @@ function Reservation() {
                   </div>
                   <div className="form-group">
                     <div className="date" id="date" data-target-input="nearest">
-                      {/* <input
-                        type="text"
-                        className="form-control bg-transparent border-primary p-4 datetimepicker-input"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        placeholder="تاریخ شمسی را وارد کنید"
-                      /> */}
-                      {/* <p>تاریخ شمسی: {date}</p> */}
-
                       <input
                         type="text"
                         className="form-control bg-transparent border-primary p-4 datetimepicker-input"
@@ -147,9 +143,19 @@ function Reservation() {
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
                       />
+                      <DatePicker
+                        locale={persian_fa}
+                        calendar={persian}
+                        format="MM/DD/YYYY HH:mm"
+                        plugins={[
+                          <TimePicker position="bottom" hideSeconds/>
+                        ]} 
+                        value={date}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <div className="time" id="time" data-target-input="nearest">
                       <input
                         type="text"
@@ -161,7 +167,7 @@ function Reservation() {
                         onChange={(e) => setTime(e.target.value)}
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div className="form-group">
                     <select
                       className="custom-select bg-transparent border-primary px-4"

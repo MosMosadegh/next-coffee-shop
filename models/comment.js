@@ -22,14 +22,14 @@ const commentSchema = new mongoose.Schema({
         trim: true, // حذف فضاهای خالی
         minlength: 1 // حداقل طول محتوا
     },
-    createdAt: {
-        type: Date,
-        default: () => Date.now() // تاریخ ایجاد به صورت خودکار
-    },
-    updatedAt: {
-        type: Date,
-        default: () => Date.now() // تاریخ آخرین ویرایش به صورت خودکار
-    },
+    // createdAt: {
+    //     type: Date,
+    //     default: () => Date.now() // تاریخ ایجاد به صورت خودکار
+    // },
+    // updatedAt: {
+    //     type: Date,
+    //     default: () => Date.now() // تاریخ آخرین ویرایش به صورت خودکار
+    // },
     // score: {
     //     type: Number,
     //     required: false,
@@ -40,7 +40,8 @@ const commentSchema = new mongoose.Schema({
     //     type: Boolean,
     //     default: false // وضعیت حذف پیش‌فرض
     // }
-});
+},{timestamps: true}
+);
 
 // تعریف مدل کامنت
 const CommentModel = mongoose.models.Comment || mongoose.model('Comment', commentSchema);

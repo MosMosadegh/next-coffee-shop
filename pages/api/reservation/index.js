@@ -14,14 +14,13 @@ const handler = async (req, res) => {
     case "POST": {
       // Req.body
       try {
-        const { name, email, phoneNumber, date, time, selectedPerson } =
+        const { name, email, phoneNumber, date, selectedPerson } =
           req.body;
 
         if (
           name.length < 1 ||
           // !phoneNumber.trim() ||
           !date.trim() ||
-          !time.trim() ||
           !selectedPerson.trim()
         ) {
           return res.status(422).json({ message: "Data is not valid" });
@@ -32,7 +31,6 @@ const handler = async (req, res) => {
           email,
           phoneNumber,
           date,
-          time,
           selectedPerson,
         });
 
